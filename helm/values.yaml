@@ -1,0 +1,4 @@
+labels:
+  app: dummy
+
+replicas: 1

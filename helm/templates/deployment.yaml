@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dummy
+  labels:
+    {{- .Values.labels | toYaml | nindent 4 }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- .Values.labels | toYaml | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- .Values.labels | toYaml | nindent 8 }}
+    spec:
+      containers:
+      - name: dummy
+        image: docker.pkg.github.com/fredr/dummy/dummy:{{ .Chart.appVersion }} 
+        ports:
+        - containerPort: 3000
+          name: http
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: http

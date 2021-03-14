@@ -1,0 +1,5 @@
+apiVersion: v2
+description: A dummy app that doens nothing
+name: dummy
+version: 1.0.0
+appVersion: 1.0.0
