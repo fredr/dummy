@@ -1,0 +1,7 @@
+labels:
+  team: infrastructure
+  app: dummy
+  git: dummy
+  system: dummy
+
+replicas: 3
