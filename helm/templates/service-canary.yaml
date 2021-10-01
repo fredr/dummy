@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dummy-canary
+  labels:
+    {{- .Values.labels | toYaml | nindent 4 }}
+spec:
+  type: ClusterIP
+  ports:
+  - port: 3000
+    name: http
+    targetPort: http
+  selector:
+    {{- .Values.labels | toYaml | nindent 4 }}
