@@ -8,7 +8,9 @@ metadata:
     nginx.ingress.kubernetes.io/canary: "true"
     nginx.ingress.kubernetes.io/canary-weight: "50"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-  name: dummy-canary
+    nginx.ingress.kubernetes.io/canary-by-header: "x-canary"
+  name: dummy
+  namespace: dummy-canary
   labels:
     {{- .Values.labels | toYaml | nindent 4 }}
 spec:

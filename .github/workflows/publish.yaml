@@ -10,7 +10,7 @@ on:
     tags:
       - v*
 env:
-  IMAGE_NAME: fredr/dummy
+  IMAGE_NAME: ivarmedi/dummy
 
 jobs:
   push:
